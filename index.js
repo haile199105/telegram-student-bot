@@ -16,7 +16,7 @@ bot.on("message", async (msg) => {
   try {
 
     const model = genAI.getGenerativeModel({
-      model: "gemini-pro"
+      model: "gemini-1.5-flash-latest"
     });
 
     const result = await model.generateContent(userText);
@@ -28,8 +28,7 @@ bot.on("message", async (msg) => {
   } catch (error) {
 
     console.error(error);
-
-    bot.sendMessage(chatId, "AI failed. Try again.");
+    bot.sendMessage(chatId, "AI error, try again.");
 
   }
 
